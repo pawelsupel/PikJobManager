@@ -9,6 +9,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "items", "items", "{B25E66F6-1B3A-4683-BFDB-BD53994A6146}"
 ProjectSection(SolutionItems) = preProject
 	..\.gitignore = ..\.gitignore
+	..\Dockerfile = ..\Dockerfile
 EndProjectSection
 EndProject
 Global

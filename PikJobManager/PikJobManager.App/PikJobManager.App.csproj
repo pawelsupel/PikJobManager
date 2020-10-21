@@ -9,6 +9,11 @@
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>../Build/</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
     <ItemGroup>
       <PackageReference Include="Autofac" Version="4.9.4" />
       <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.1" />
