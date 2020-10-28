@@ -16,6 +16,7 @@ using NLog.Web;
 using PikJobManager.Core;
 using Quartz;
 using Quartzmin;
+using Module = Autofac.Module;
 
 namespace PikJobManager.App
 {
@@ -55,12 +56,18 @@ namespace PikJobManager.App
             }
 
             var typesToRegister = new List<Type>();
+            var modules = new List<Type>();
             foreach (var assembly in assemblies)
             {
                 var items = assembly.GetTypes()
                     .Where(x => x.IsClass && x.IsPublic && x.GetInterfaces().Contains(typeof(IPikJobManagerModule))).ToList();
-                
+
                 typesToRegister.AddRange(items);
+
+                var moduleItems = assembly.GetTypes()
+                    .Where(x => x.IsClass && x.IsPublic && x.BaseType == typeof(Module)).ToList();
+                
+                modules.AddRange(moduleItems);
             }
             
             var containerBuilder = new ContainerBuilder();
@@ -68,6 +75,7 @@ namespace PikJobManager.App
             containerBuilder.RegisterInstance(this.logger).As<ILogger>();
 
             ConfigureContainer(containerBuilder, typesToRegister);
+            RegisterModules(modules, containerBuilder);
             
             this.container = containerBuilder.Build();
             
@@ -151,6 +159,15 @@ namespace PikJobManager.App
                 .WithCronSchedule(schedule.Cron)
                 .WithDescription(schedule.Cron)
                 .Build();
+        }
+
+        private static void RegisterModules(IList<Type> modules, ContainerBuilder cb)
+        {
+            foreach (var module in modules)
+            {
+                var instance = (Module)Activator.CreateInstance(module);
+                cb.RegisterModule(instance);
+            }
         }
     }
 }

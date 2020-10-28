@@ -1,7 +1,6 @@
-using System;
 using System.Threading.Tasks;
-using NLog;
 using PikJobManager.Core;
+using PikJobManagerModules.Services;
 using Quartz;
 
 namespace PikJobManagerModules
@@ -9,15 +8,15 @@ namespace PikJobManagerModules
     [DisallowConcurrentExecution]
     public class ModuleExample : ModuleBase, IPikJobManagerModule
     {
-        private readonly ILogger logger;
-        public ModuleExample(ILogger logger)
+        private readonly IExampleService service;
+        public ModuleExample(IExampleService service)
         {
-            this.logger = logger;
+            this.service = service;
         }
         
         public Task Execute(IJobExecutionContext context)
         {
-            this.logger.Info("*");
+            this.service.Log();
             
             return Task.CompletedTask;
         }
