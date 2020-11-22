@@ -21,4 +21,4 @@ This is implemented because the application loads all dlls from Modules director
 
 You can create another project with modules!
 **BUT**
-Project name must finishing with **Modules** word, and must be builded in **../Build/Modules/**
+Project must be builded in **../Build/Modules/**

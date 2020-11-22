@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 using PikJobManager.Core;
-using PikJobManagerModules.Services;
+using PikJobManager.Service.Services;
 using Quartz;
 
 namespace PikJobManagerModules
