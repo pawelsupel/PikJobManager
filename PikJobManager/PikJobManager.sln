@@ -10,7 +10,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "items", "items", "{B25E66F6
 ProjectSection(SolutionItems) = preProject
 	..\.gitignore = ..\.gitignore
 	..\Dockerfile = ..\Dockerfile
+	..\README.md = ..\README.md
 EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PikJobManager.Service", "PikJobManager.Service\PikJobManager.Service.csproj", "{94F3CDEC-EF69-48EE-9872-E70778759ABB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +33,9 @@ Global
 		{3D544A6E-871D-4078-B504-30776FF6C4BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D544A6E-871D-4078-B504-30776FF6C4BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D544A6E-871D-4078-B504-30776FF6C4BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94F3CDEC-EF69-48EE-9872-E70778759ABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94F3CDEC-EF69-48EE-9872-E70778759ABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94F3CDEC-EF69-48EE-9872-E70778759ABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94F3CDEC-EF69-48EE-9872-E70778759ABB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -18,11 +18,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\PikJobManager.Core\PikJobManager.Core.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <PackageReference Include="NLog" Version="4.6.8" />
-      <PackageReference Include="NLog.Web.AspNetCore" Version="4.9.0" />
+      <ProjectReference Include="..\PikJobManager.Service\PikJobManager.Service.csproj" />
     </ItemGroup>
 
 </Project>

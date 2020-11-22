@@ -1,5 +1,6 @@
 using Autofac;
-using PikJobManagerModules.Services;
+using PikJobManager.Core;
+using PikJobManager.Service.Services;
 
 namespace PikJobManagerModules
 {

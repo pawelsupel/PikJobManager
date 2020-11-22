@@ -1,7 +1,6 @@
-using System;
 using NLog;
 
-namespace PikJobManagerModules.Services
+namespace PikJobManager.Service.Services
 {
     public class ExampleService : IExampleService
     {
