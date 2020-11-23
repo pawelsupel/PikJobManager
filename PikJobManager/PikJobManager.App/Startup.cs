@@ -34,8 +34,8 @@ namespace PikJobManager.App
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
 
             Configuration = builder.Build();
-            
-            this.logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
+
+            this.logger = NLogBuilder.ConfigureNLog("nlog.config").GetLogger("PikJobManager");
         }
         
         public void ConfigureServices(IServiceCollection services)
